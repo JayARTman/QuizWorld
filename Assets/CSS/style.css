@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+:root {
+    --main-color: #222831;
+    --secondary-color: #00adb5;
+    --accent-color: #393e46;
+    --white: #eeeeee;
+
+}
+
+.flex-container {
+    flex-wrap: flex;
+    flex-direction: row;
+    background-color: var(--main-color);
+    height: 100px;
+}
+
+.flex-item {
+    flex: auto;
+}
+
+h4 {
+    color: #eeeeee;
+}
