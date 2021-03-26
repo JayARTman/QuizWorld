@@ -1,8 +1,51 @@
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('resluts');
-var submitButton = document.getElementById('submit');
+// Functions
+function buildQuiz(){ ... }
+function showResults(){ ... }
 
-function buildQuiz(){}
+// Variables
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const submitButton = document.getElementById('submit');
+const myQuestions = [ ... ];
+
+// Kick things off
+buildQuiz();
+
+// Event listeners
+submitButton.addEventListener('click', showResults);
+
+// for each question
+myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
+        
+        // variable to store the list of possible answers
+        const answers = [];
+
+        //and for each available answer
+        for(letter in currentQuestion.answers){
+
+            // add and HTML radio button
+            answers.push(
+                '<label>
+                    <input type="radio" name="question${questionNumber}" value="${leter}">
+                    ${letter} :
+                    ${currentQuestion.answers[letter]}
+                </label>'
+            );
+         }
+
+            //add this question and its answer to the output
+            output.push(
+                '<div class="questions"> ${currentQuestions.question} </div>
+                <div class="answers'> ${answers.join('')} </div>'
+            );
+        }
+    );
+
+        //combine our output list into one string of HTML and put it on the page
+        quizContainer.innerHTML = output.join('');
+    }
+            
 
 function showResults(){}
 
