@@ -12,17 +12,52 @@
 
 }
 
-.flex-container {
-    flex-wrap: flex;
+header {
+    padding: 50px 6% 50px 6%;
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
     background-color: var(--main-color);
-    height: 100px;
 }
 
-.flex-item {
+header h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     flex: auto;
+    color: var(--white);
 }
 
-h4 {
-    color: #eeeeee;
+body{
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	color: var(--main-color);
+}
+
+.questions{
+	font-weight: 600;
+}
+
+.answers {
+  margin-bottom: 20px;
+}
+
+.answers label{
+  display: block;
+}
+
+#submit{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	background-color: #279;
+	color: var(--white);
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+#submit:hover{
+	background-color: var(--secondary-color);
 }
