@@ -28,6 +28,13 @@ header h4 {
     color: var(--white);
 }
 
+.timer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  flex: auto;
+  color: var(--white);
+}
+
 body{
 	font-size: 20px;
 	font-family: 'Montserrat', sans-serif;
@@ -60,4 +67,37 @@ body{
 
 #submit:hover{
 	background-color: var(--secondary-color);
+}
+
+.quiz-container {
+  padding: 50px 6% 50px 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--white);
+}
+
+/* /* .slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2; */
+ /* }  */
+
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+
+.invisible {
+  display: none;
 }

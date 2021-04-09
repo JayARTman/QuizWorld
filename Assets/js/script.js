@@ -1,4 +1,5 @@
 // Functions
+var index = 0
 function buildQuiz(){
     // variable to store the HTML output
     const output = [];
@@ -6,7 +7,7 @@ function buildQuiz(){
     // for each question...
     myQuestions.forEach(
       (currentQuestion, questionNumber) => {
-  
+  console.log(currentQuestion);
         // variable to store the list of possible answers
         const answers = [];
   
@@ -16,7 +17,7 @@ function buildQuiz(){
           // ...add an HTML radio button
           answers.push(
             `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
+              <input class ="answerBtn" type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
@@ -32,9 +33,12 @@ function buildQuiz(){
     );
   
     // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
+    quizContainer.innerHTML = output[index];
   }
 
+function showNew (){
+  
+}
 
 function showResults(){
     // gather answer containers from our quiz
