@@ -28,17 +28,18 @@ header h4 {
     color: var(--white);
 }
 
-.timer {
+#timer {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   flex: auto;
   color: var(--white);
 }
 
+
 body{
 	font-size: 20px;
 	font-family: 'Montserrat', sans-serif;
-	color: var(--main-color);
+	/* color: var(--main-color); */
 }
 
 .questions{
