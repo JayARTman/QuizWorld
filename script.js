@@ -126,63 +126,25 @@ function saveHighScore(){
     }
     highScoreStorage.push(newHighScore);
     localStorage.setItem("quizScore", JSON.stringify(highScoreStorage))
+    showHighscore();
 }
     const submit = document.getElementById("submit");
     submit.onclick = saveHighScore;
 
-    
-/* <div id="endQuiz" class="invisible">
-    <p>Your Final Score Is <span id = "score"></span></p>
-    <input type="text" id="highScore"/>
-    <button id="submit">Submit
-    </button>
-</div> */
-//function showResults(){}
+function showHighscore() {
+    let results = document.getElementById("results")
+    results.removeAttribute("class")
+    let highscores = JSON.parse(localStorage.getItem("quizScore"))|| [];
+    highscores.sort(function(x, y){
+        return y.highScore - x.highScore
+    })
+    let ol = document.getElementById("list")
+    for (let i = 0; i < highscores.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = highscores[i].name+ " "+highscores[i].highScore;
+        ol.append(li);
+    }
+}
+//for (let i = 0; i < currentQ.answers.length; i++) {
 
-// Kick things off
-//btn.addEventListener('click', buildQuiz);
-// Event listeners
 btn.onclick = buildQuiz
-//submitButton.addEventListener('click', showResults);
-
-// for each question
-// myQuestions.forEach(
-//     (currentQuestion, questionNumber) => {
-        
-//         // variable to store the list of possible answers
-//         const answers = [];
-
-//         //and for each available answer
-//         for(letter in currentQuestion.answers){
-
-//             // add and HTML radio button
-//             answers.push(
-//                 '<label>
-//                     <input type="radio" name="question${questionNumber}" value="${leter}">
-//                     ${letter} :
-//                     ${currentQuestion.answers[letter]}
-//                 </label>'
-//             );
-//          }
-
-//             //add this question and its answer to the output
-//             output.push(
-//                 '<div class="questions"> ${currentQuestions.question} </div>
-//                 <div class="answers'> ${answers.join('')} </div>'
-//             );
-//         }
-//     );
-
-//         //combine our output list into one string of HTML and put it on the page
-//         quizContainer.innerHTML = output.join('');
-//     }
-            
-
-//function showResults(){}
-
-// display quiz right away
-//buildQuiz();
-
-// on submit, show results
-//submitButton.addEventListener('click', showResults);
-
